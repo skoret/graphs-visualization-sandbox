@@ -21,6 +21,7 @@ application {
 }
 
 javafx {
+    version = "11.0.2"
     modules("javafx.controls")
 }
 

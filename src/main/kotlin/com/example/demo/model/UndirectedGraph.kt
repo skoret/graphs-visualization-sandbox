@@ -1,4 +1,4 @@
-package com.example.demo.graphs
+package com.example.demo.model
 
 internal class UndirectedGraph<V, E>: Graph<V, E> {
     private val vertices = hashMapOf<V, Vertex<V>>()

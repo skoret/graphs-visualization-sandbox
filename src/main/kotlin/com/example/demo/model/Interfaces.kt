@@ -1,4 +1,4 @@
-package com.example.demo.graphs
+package com.example.demo.model
 
 interface Vertex<V> {
     var element: V

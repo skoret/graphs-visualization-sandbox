@@ -1,11 +1,7 @@
 package com.example.demo.view
 
 import com.example.demo.model.Edge
-import javafx.scene.paint.Color
 import javafx.scene.shape.Line
-import tornadofx.c
-import tornadofx.label
-import tornadofx.style
 import tornadofx.text
 
 class EdgeView<E, V>(
@@ -22,7 +18,7 @@ class EdgeView<E, V>(
 
     val label = text(edge.element.toString()) {
         visibleProperty().bind(props.edge.label)
-        xProperty().bind(startXProperty().add(endXProperty()).divide(2).subtract(layoutBoundsProperty().get().width / 2))
-        yProperty().bind(startYProperty().add(endYProperty()).divide(2).add(layoutBoundsProperty().get().height / 1.5))
+        xProperty().bind(startXProperty().add(endXProperty()).divide(2).subtract(layoutBounds.width / 2))
+        yProperty().bind(startYProperty().add(endYProperty()).divide(2).add(layoutBounds.height / 1.5))
     }
 }

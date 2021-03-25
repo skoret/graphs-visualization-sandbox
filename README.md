@@ -1,5 +1,5 @@
 # graphs-visualization-sandbox
-Sample project for graphs visualization with TornadoFX
+Sample project for graphs visualization with TornadoFX ([readme on russian](https://www.notion.so/skoret/kotlin-graphs-87f8d07433484cfa9024620080f8d45c))
 
 ## Setup
 - Intellij IDEA `2020.3.2`

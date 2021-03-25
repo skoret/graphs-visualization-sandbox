@@ -11,8 +11,8 @@ Sample project for graphs visualization with TornadoFX ([readme on russian](http
 - OpenJFX JavaFX Gradle Plugin `0.0.9`
 
 ## Build & Run
-Build: `gradle build`   
-Run: `gradle run`   
+Build: `./gradlew build` or `gradlew.bat build` on Windows   
+Run: `./gradlew run` or `gradlew.bat build` on Windows   
 Or open, build and run project from Intellij IDEA
 
 ## Troubleshooting

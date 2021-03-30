@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
     application
     kotlin("jvm")
@@ -29,6 +31,6 @@ javafx {
     modules("javafx.controls")
 }
 
-tasks.compileKotlin {
+tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "11"
 }

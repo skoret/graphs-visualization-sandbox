@@ -1,32 +1,34 @@
 plugins {
     application
-    kotlin("jvm") version "1.4.31"
-    id("org.openjfx.javafxplugin") version "0.0.9"
+    kotlin("jvm")
+    id("org.openjfx.javafxplugin")
 }
 
 repositories {
     jcenter()
 }
 
+val `tornadofx-version`: String by project
+
 dependencies {
     implementation(kotlin("stdlib-jdk8"))
     implementation(kotlin("reflect"))
-    implementation("no.tornado:tornadofx:1.7.20")  {
+    implementation("no.tornado:tornadofx:$`tornadofx-version`")  {
         exclude("org.jetbrains.kotlin")
     }
 }
 
 application {
-    mainClass.set("com.example.MyApp")
+    mainClass.set("com.example.demo.MainApp")
 }
 
+val `javafx-version`: String by project
+
 javafx {
-    version = "11.0.2"
+    version = `javafx-version`
     modules("javafx.controls")
 }
 
-tasks {
-    compileKotlin {
-        kotlinOptions.jvmTarget = "11"
-    }
+tasks.compileKotlin {
+    kotlinOptions.jvmTarget = "11"
 }

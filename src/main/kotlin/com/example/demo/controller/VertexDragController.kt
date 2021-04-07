@@ -42,7 +42,8 @@ class VertexDragController: Controller() {
     }
 
     private fun check(event: MouseEvent): VertexView<*> {
-        require(event.target is VertexView<*>) { "handler supposed to process events only for vertices: $event" }
+        require(event.target is VertexView<*>)
+        { "handler supposed to process events only for vertices: $event" }
         return event.target as VertexView<*>
     }
 

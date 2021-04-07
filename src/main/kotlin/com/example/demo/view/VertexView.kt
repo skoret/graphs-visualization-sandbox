@@ -3,6 +3,7 @@ package com.example.demo.view
 import com.example.demo.model.Vertex
 import javafx.beans.property.DoubleProperty
 import javafx.scene.paint.Color
+import javafx.scene.paint.Paint
 import javafx.scene.shape.Circle
 import tornadofx.label
 import tornadofx.style
@@ -13,7 +14,8 @@ class VertexView<V>(
     x: Double,
     y: Double,
     r: DoubleProperty,
-): Circle(x, y, r.get()) {
+    color: Color,
+) : Circle(x, y, r.get(), color) {
     init {
         radiusProperty().bind(r)
     }
@@ -23,6 +25,12 @@ class VertexView<V>(
         set(value) {
             centerX = value.first
             centerY = value.second
+        }
+
+    var color: Color
+        get() = fill as Color
+        set(value) {
+            fill = value
         }
 
     val label = text(vertex.element.toString()) {

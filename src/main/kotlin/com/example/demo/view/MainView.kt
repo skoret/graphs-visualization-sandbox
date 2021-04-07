@@ -1,18 +1,13 @@
 package com.example.demo.view
 
 import com.example.demo.controller.CircularPlacementStrategy
-import com.example.demo.controller.PlacementStrategy
-import tornadofx.View
-import tornadofx.action
-import tornadofx.borderpane
-import tornadofx.button
-import tornadofx.center
-import tornadofx.checkbox
-import tornadofx.vbox
+import com.example.demo.controller.RepresentationStrategy
+import tornadofx.*
 
-class MainView: View("Graph visualizer 📿") {
+
+class MainView: View("Graph visualizer") {
     private val graph = GraphView(props.SAMPLE_GRAPH)
-    private val strategy: PlacementStrategy by inject<CircularPlacementStrategy>()
+    private val strategy: RepresentationStrategy by inject<CircularPlacementStrategy>()
 
     override val root = borderpane {
         center {
@@ -29,16 +24,14 @@ class MainView: View("Graph visualizer 📿") {
                     println("edges labels are ${if (isSelected) "enabled" else "disabled"}")
                 }
             }
-            checkbox("Run automatic layout", props.layout.auto) {
-                isDisable = true
-                action {
-                    println("automatic layout are ${if (isSelected) "enabled" else "disabled"}")
-                    // TODO: here some smart graph layout algorithm should be run
-                }
-            }
-            button("Reset default layout") {
+            button("Reset default settings") {
                 action {
                     arrangeVertices()
+                }
+            }
+            button("Set colors") {
+                action {
+                    highlightVertices()
                 }
             }
         }
@@ -50,11 +43,17 @@ class MainView: View("Graph visualizer 📿") {
 
     private fun arrangeVertices() {
         currentStage?.apply {
-            strategy.place<String, Long>(
+            strategy.place<String>(
                 width - props.vertex.radius.get() * 5,
                 height - props.vertex.radius.get() * 5,
                 graph.vertices(),
             )
+        }
+    }
+
+    private fun highlightVertices() {
+        currentStage?.apply {
+            strategy.highlight<String>(graph.vertices())
         }
     }
 }

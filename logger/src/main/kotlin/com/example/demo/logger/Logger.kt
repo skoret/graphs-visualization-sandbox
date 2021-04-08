@@ -1,5 +1,5 @@
 package com.example.demo.logger
 
-fun logger(msg: String) {
-    println("msg: $msg")
+fun log(message: String) {
+    println("message: $message")
 }

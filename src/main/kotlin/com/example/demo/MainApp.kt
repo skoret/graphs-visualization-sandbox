@@ -1,6 +1,6 @@
 package com.example.demo
 
-import com.example.demo.logger.logger
+import com.example.demo.logger.log
 import com.example.demo.styles.Styles
 import com.example.demo.view.MainView
 import javafx.stage.Stage
@@ -9,13 +9,15 @@ import tornadofx.launch
 
 class MainApp: App(MainView::class, Styles::class) {
     override fun start(stage: Stage) {
-        logger("puk hi")
+        log("Starting the application...")
+
         with(stage) {
-            width = 1024.0
-            height = 768.0
+            width = 800.0
+            height = 600.0
         }
         super.start(stage)
-        logger("puk bye")
+
+        log("The application has started")
     }
 }
 

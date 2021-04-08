@@ -1,7 +1,6 @@
 package com.example.demo.styles
 
 import tornadofx.Stylesheet
-import tornadofx.cssclass
 import tornadofx.loadFont
 import tornadofx.px
 

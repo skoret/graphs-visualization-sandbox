@@ -7,7 +7,7 @@ plugins {
 }
 
 repositories {
-//    mavenLocal()
+    //mavenLocal()
     jcenter()
 }
 
@@ -15,9 +15,10 @@ val `tornadofx-version`: String by project
 
 dependencies {
     implementation(project("logger")) // import our sub-project
-//    implementation("com.example.demo:logger:0.0.1") // import artifact from remote/local repository
-                                                      // or gradle will substitute this dependency with local 'logger' sources
-                                                      //  if we add 'includeBuild("logger")' to our 'settings.gradle.kts' file
+    //implementation("com.example.demo:logger:0.0.1")
+    // import artifact from remote/local repository
+    // or gradle will substitute this dependency with local 'logger' sources
+    //  if we add 'includeBuild("logger")' to our 'settings.gradle.kts' file
 
     implementation(kotlin("stdlib-jdk8"))
     implementation(kotlin("reflect"))
